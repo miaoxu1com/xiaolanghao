@@ -79,7 +79,7 @@ patch:
       margin_x: 12
       margin_y: 12
       spacing: 10
-      candidate_spacing: 5
+      candidate_spacing: 5 # 候选词之间间距
       hilite_spacing: 4
       hilite_padding: 2
       # hilite_padding_x: 2
