@@ -76,8 +76,8 @@ patch:
       min_width: 160
       type: horizontal
       border_width: 1
-      margin_x: 12
-      margin_y: 12
+      margin_x: 6 # 候选词和边框水平之间空白距离
+      margin_y: 6 # 候选词和边框垂直之间空白距离
       spacing: 10
       candidate_spacing: 5 # 候选词之间间距
       hilite_spacing: 4 # 序号与候选词之间的边距
