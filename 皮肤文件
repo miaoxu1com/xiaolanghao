@@ -119,7 +119,8 @@ patch:
       hilited_candidate_text_color: 0xFFFFFF
       hilited_candidate_back_color: 0x69AD2E
       candidate_text_color: 0x69AD2E
-      comment_text_color: 0xFFFFFF
+      hilited_comment_text_color: 0x8E8E8E # 拼音注解选中时的颜色
+      comment_text_color: 0x999999 # 拼音注解未选中时的颜色
 
     ms_wechat_dark:
       name: 微信dark
