@@ -61,15 +61,15 @@ patch:
     color_scheme: ms_wechat_light
     # color_scheme: ms_wechat_dark
 
-    font_face: "微软雅黑"
-    font_point: 14
-    horizontal: true
-    inline_preedit: true
-    label_font_point: 14
+    font_face: "微软雅黑" # 候选词字体
+    font_point: 14 # 候选词大小
+    horizontal: true  # 候选词水平显示
+    inline_preedit: true  # 候选词指示器独立显示
+    label_font_point: 14 # 序号大小
     layout:
       baseline: 0
       linespacing: 0
-      align_type: center
+      align_type: center # 候选词对齐方式
       max_height: 0
       max_width: 0
       min_height: 0
