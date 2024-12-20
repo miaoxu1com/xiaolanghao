@@ -56,6 +56,7 @@ patch:
 写法2 这种是直接在weasel.custom.yaml文件中添加配色和直接补丁
 patch:
   style:
+    label_format: "%s." # 候选词前序号的风格 1. 这种风格
     # color_scheme: ms_sogou
     color_scheme: ms_wechat_light
     # color_scheme: ms_wechat_dark
