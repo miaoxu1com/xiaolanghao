@@ -75,12 +75,12 @@ patch:
       min_height: 0
       min_width: 160
       type: horizontal
-      border_width: 3
+      border_width: 1
       margin_x: 12
       margin_y: 12
       spacing: 10
       candidate_spacing: 5 # 候选词之间间距
-      hilite_spacing: 4
+      hilite_spacing: 4 # 序号与候选词之间的边距
       hilite_padding: 2
       # hilite_padding_x: 2
       # hilite_padding_y: 2
@@ -108,7 +108,8 @@ patch:
       name: 微信light
       author: Mark24Code
       back_color: 0xFFFFFF
-      border_color: 0xFFFFFF
+      #border_color: 0xFFFFFF
+      border_color: 0xE0E0E0 # 这里如果设置和text_color同色看不出来区别就没有了边界感，候选词边框颜色
       text_color: 0x69AD2E
       hilited_text_color: 0xFFFFFF
       hilited_back_color: 0x69AD2E
