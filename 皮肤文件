@@ -22,6 +22,10 @@ https://blog.isteed.cc/post/rime-2022/
 
 雾凇拼音反查开启
 rime_ice.dict.yaml文件中开启  - cn_dicts/41448词库可以提升注解范围
+rime_ice.dict.yaml 小狼毫字典配置文件
+rime_ice.schema.yaml 小狼毫方案配置文件
+weasel.custom.yaml 小狼毫用户配置文件
+weasel.yaml 小狼毫全局配置文件
 
 使用小狼毫输入法就要按照小狼毫配置文件进行配置
 复制须鼠管皮肤代码到小狼毫预置皮肤文件中
