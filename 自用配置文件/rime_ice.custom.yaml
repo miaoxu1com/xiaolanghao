@@ -1,0 +1,51 @@
+# ============================================================
+# 带调拼音标注 · 增量补丁（只作用于 rime_ice 方案）
+# 配套文件：lua/tone_hint.lua（数据来自万象拼音 dicts/zi.dict.yaml, CC BY 4.0）
+# 回退方法：删除本文件 + lua/tone_hint.lua，重新部署即可完全还原
+# ============================================================
+patch:
+  # corrector.lua 默认会清空候选的拼音注释；这里让它保留，
+  # tone_hint.lua 才能读到雾凇词库给出的「正确无调读音」并加上声调
+  translator/keep_comments: true
+
+  # 在方案选单最后加一个开关（第一项「带调标注」是默认状态）
+  switches:
+    - name: ascii_mode
+      states: [ 中, Ａ ]
+    - name: ascii_punct
+      states: [ ¥, $ ]
+    - name: traditionalization
+      states: [ 简, 繁 ]
+    - name: emoji
+      states: [ 💀, 😄 ]
+      reset: 1
+    - name: full_shape
+      states: [ 半角, 全角 ]
+    - name: search_single_char
+      states: [正常, 单字]
+      abbrev: [词, 单]
+    - name: tone_hint_off
+      states: [带调标注, 标注关]
+
+  # 保持原有滤镜顺序，只在最后追加 tone_hint（需位于 corrector 之后）
+  engine/filters:
+    - lua_filter@*corrector
+    - reverse_lookup_filter@radical_reverse_lookup
+    - lua_filter@*autocap_filter
+    - lua_filter@*v_filter
+    - lua_filter@*pin_cand_filter
+    - lua_filter@*long_word_filter
+    - lua_filter@*reduce_english_filter
+    - simplifier@emoji
+    - simplifier@traditionalize
+    - lua_filter@*search@radical_pinyin
+    - uniquifier
+    - lua_filter@*tone_hint
+
+  # ---- 可选微调 ----
+  # 注释样式，{comment} 是带调拼音占位符，例如 "〔{comment}〕" 或 "({comment})"
+  tone_hint/style: "{comment}"
+  # 只对不超过 N 个字的候选加标注，0 = 不限
+  tone_hint/max_length: 0
+  # 关闭开关时是否仍保留无调拼音注释（false = 恢复雾凇默认，不显示）
+  tone_hint/keep_when_off: false
